@@ -1,0 +1,32 @@
+
+public class Main {
+
+    static boolean isPaliidron(int number) {
+        int temp = number;
+        int reverseNumber = 0;
+        int lastNumber;
+
+        while (temp != 0) {
+            System.out.println("===========");
+            System.out.println("Sayi:" + temp);
+
+            lastNumber = temp % 10;
+            System.out.println("son basamak:" + lastNumber);
+
+            reverseNumber = (reverseNumber * 10) + lastNumber;
+            System.out.println("" +
+                    "yeni Sayi:" + reverseNumber);
+            temp /= 10;
+            System.out.println("Yeni temp:" + temp);
+        }
+        if (reverseNumber == number)
+            return true;
+        else
+            return false;
+
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isPaliidron(101));
+    }
+}
