@@ -1,0 +1,107 @@
+import java.util.Scanner;
+
+public class Main {
+
+    static void sum(int a, int b) {
+        int result = a + b;
+        System.out.println("Toplam:" + result);
+    }
+
+    static void minus(int a, int b) {
+        int result = a - b;
+        System.out.println("Cikarma:" + result);
+    }
+
+    static void times(int a, int b) {
+        int result = a * b;
+        System.out.println("Carpma:" + result);
+    }
+
+    static int divided(int a, int b) {
+        if (b == 0) {
+            System.out.println("ikinci sayi 0 olamaz!");
+            return 0;
+        }
+        int result = a / b;
+        System.out.println("Bolme:" + result);
+        return result;
+    }
+
+    static void power(int a, int b) {
+        int result = 1;
+        for (int i = 1; i <= b; i++) {
+            result *= a;
+        }
+        System.out.println("Us Alma:" + result);
+    }
+
+    static void mod(int a, int b) {
+        int result = a % b;
+        System.out.println("Mod Alma:" + result);
+    }
+
+    static void calc(int a, int b) {
+        int cevre = 2 * (a + b);
+        int alan = a * b;
+        System.out.println("Cevre:" + cevre);
+        System.out.println("Alan:" + alan);
+    }
+
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int select;
+        String menu = "1-Toplama Islemi\n"
+                + "2-Cikarma Islemi\n"
+                + "3-Carpma Islemi\n"
+                + "4-Bolme Islemi\n"
+                + "5-Us Alma\n"
+                + "6-Mod Alma\n"
+                + "7-Alan ve Cevre Hesaplama\n"
+                + "0-Cikis Yap";
+
+        System.out.println(menu);
+
+        while (true) {
+            System.out.print("Bir islem seciniz:");
+            select = scan.nextInt();
+
+            if (select == 0) {
+                break;
+            }
+            System.out.println("ilk sayi:");
+            int a = scan.nextInt();
+            System.out.println("Ikinci sayi:");
+            int b = scan.nextInt();
+
+            switch (select) {
+                case 1:
+                    sum(a, b);
+                    break;
+                case 2:
+                    minus(a, b);
+                    break;
+                case 3:
+                    times(a, b);
+                    break;
+                case 4:
+                    divided(a, b);
+                    break;
+                case 5:
+                    power(a, b);
+                    break;
+                case 6:
+                    mod(a, b);
+                    break;
+                case 7:
+                    calc(a, b);
+                    break;
+                default:
+                    System.out.println("Gecersiz islem girdiniz!");
+            }
+        }
+        System.out.println("Gule Gule...");
+
+
+    }
+}
